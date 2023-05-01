@@ -5,6 +5,14 @@ import { Tech } from "./components/Tech";
 import { techs } from "./variables/techs";
 import { IGithubRepo } from "./types/github";
 
+import MapPin from './assets/map-pin.svg';
+import Github from './assets/github.svg';
+import Linkedin from './assets/linkedin.svg';
+import Mail from './assets/mail.svg';
+import Folder from './assets/folder.svg';
+import Star from './assets/star.svg';
+import GitBranch from './assets/git-branch.svg';
+
 function App() {
   const [repositories, setRepositories] = useState<IGithubRepo[]>([]);
 
@@ -41,22 +49,22 @@ function App() {
           <div className="flex flex-col p-10 gap-5">
             <Link
               name="Brasil"
-              image_path="/src/assets/map-pin.svg"
+              image_path={MapPin}
               image_alt="Icone referenciando localização"
             />
             <Link
               name="WeslleySORDev"
-              image_path="/src/assets/github.svg"
+              image_path={Github}
               image_alt="Icone do github"
             />
             <Link
               name="weslleysordev"
-              image_path="/src/assets/linkedin.svg"
+              image_path={Linkedin}
               image_alt="Icone do linkedin"
             />
             <Link
               name="weslleysordev@gmail.com"
-              image_path="/src/assets/mail.svg"
+              image_path={Mail}
               image_alt="Icone de email"
             />
           </div>
@@ -122,13 +130,13 @@ function App() {
                       <div className="flex flex-col justify-between h-full gap-6 p-8">
                         <div className="flex items-center gap-4">
                           <img
-                            src="/src/assets/folder.svg"
+                            src={Folder}
                             alt="Icone de uma pasta"
                           />
                           <span>{repo.name}</span>
                         </div>
                         {repo.description ? (
-                          <span className="text-xs font-light">
+                          <span className="text-xs font-light break-words truncate">
                             {repo.description}
                           </span>
                         ) : null}
@@ -136,7 +144,7 @@ function App() {
                           <div className="flex gap-4">
                             <div className="flex items-center gap-2">
                               <img
-                                src="/src/assets/star.svg"
+                                src={Star}
                                 alt="Icone de estrela"
                               />
                               <span className="text-xs font-light">
@@ -145,7 +153,7 @@ function App() {
                             </div>
                             <div className="flex items-center gap-2">
                               <img
-                                src="/src/assets/git-branch.svg"
+                                src={GitBranch}
                                 alt="Icone de git branch"
                               />
                               <span className="text-xs font-light">
