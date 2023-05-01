@@ -39,12 +39,25 @@ function App() {
         </Card>
         <Card>
           <div className="flex flex-col p-10 gap-5">
-            <Link name="Brasil" image_path="/src/assets/map-pin.svg" />
-            <Link name="WeslleySORDev" image_path="/src/assets/github.svg" />
-            <Link name="weslleysordev" image_path="/src/assets/linkedin.svg" />
+            <Link
+              name="Brasil"
+              image_path="/src/assets/map-pin.svg"
+              image_alt="Icone referenciando localização"
+            />
+            <Link
+              name="WeslleySORDev"
+              image_path="/src/assets/github.svg"
+              image_alt="Icone do github"
+            />
+            <Link
+              name="weslleysordev"
+              image_path="/src/assets/linkedin.svg"
+              image_alt="Icone do linkedin"
+            />
             <Link
               name="weslleysordev@gmail.com"
               image_path="/src/assets/mail.svg"
+              image_alt="Icone de email"
             />
           </div>
         </Card>
@@ -88,58 +101,73 @@ function App() {
         <Card>
           <div className="flex items-center justify-between p-8">
             <h2 className="text-xl font-bold">Meus Projetos</h2>
-            <a href="https://github.com/WeslleySORDev?tab=repositories" target="_blank" className="text-sm font-light underline underline-offset-4">Veja todos</a>
+            <a
+              href="https://github.com/WeslleySORDev?tab=repositories"
+              target="_blank"
+              className="text-sm font-light underline underline-offset-4"
+            >
+              Veja todos
+            </a>
           </div>
         </Card>
         <div className="grid grid-cols-2 auto-rows-fr gap-8 w-full">
           {repositories.length > 0
             ? repositories.map((repo) => {
-                return (
-                  <Card key={repo.name}>
-                    <div className="flex flex-col justify-between h-full gap-6 p-8">
-                      <div className="flex items-center gap-4">
-                        <img
-                          src="/src/assets/folder.svg"
-                          alt="Icone de uma pasta"
-                        />
-                        <span>{repo.name}</span>
-                      </div>
-                      {repo.description ? (
-                        <span className="text-xs font-light">
-                          {repo.description}
-                        </span>
-                      ) : null}
-                      <div className="flex justify-between items-center">
-                        <div className="flex gap-4">
-                          <div className="flex items-center gap-2">
-                            <img
-                              src="/src/assets/star.svg"
-                              alt="Icone de estrela"
-                            />
-                            <span className="text-xs font-light">100</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <img
-                              src="/src/assets/git-branch.svg"
-                              alt="Icone de git branch"
-                            />
-                            <span className="text-xs font-light">100</span>
-                          </div>
+                if (
+                  repo.name !== "poke-images" &&
+                  repo.name !== "Weather-Web"
+                ) {
+                  return (
+                    <Card key={repo.name}>
+                      <div className="flex flex-col justify-between h-full gap-6 p-8">
+                        <div className="flex items-center gap-4">
+                          <img
+                            src="/src/assets/folder.svg"
+                            alt="Icone de uma pasta"
+                          />
+                          <span>{repo.name}</span>
                         </div>
-                        {repo.language ? (
-                          <div className="flex items-center gap-2">
-                            <div
-                              className={`ring-2 ring-${repo.language.toLocaleLowerCase} h-4 w-4 rounded-full`}
-                            ></div>
-                            <span className="text-xs font-light">
-                              {repo.language}
-                            </span>
-                          </div>
+                        {repo.description ? (
+                          <span className="text-xs font-light">
+                            {repo.description}
+                          </span>
                         ) : null}
+                        <div className="flex justify-between items-center">
+                          <div className="flex gap-4">
+                            <div className="flex items-center gap-2">
+                              <img
+                                src="/src/assets/star.svg"
+                                alt="Icone de estrela"
+                              />
+                              <span className="text-xs font-light">
+                                {repo.stargazers_count}
+                              </span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <img
+                                src="/src/assets/git-branch.svg"
+                                alt="Icone de git branch"
+                              />
+                              <span className="text-xs font-light">
+                                {repo.forks_count}
+                              </span>
+                            </div>
+                          </div>
+                          {repo.language ? (
+                            <div className="flex items-center gap-2">
+                              <div
+                                className={`ring-2 ring-${repo.language.toLocaleLowerCase} h-4 w-4 rounded-full`}
+                              ></div>
+                              <span className="text-xs font-light">
+                                {repo.language}
+                              </span>
+                            </div>
+                          ) : null}
+                        </div>
                       </div>
-                    </div>
-                  </Card>
-                );
+                    </Card>
+                  );
+                }
               })
             : null}
         </div>
