@@ -5,13 +5,13 @@ import { Tech } from "./components/Tech";
 import { techs } from "./variables/techs";
 import { IGithubRepo } from "./types/github";
 
-import MapPin from './assets/map-pin.svg';
-import Github from './assets/github.svg';
-import Linkedin from './assets/linkedin.svg';
-import Mail from './assets/mail.svg';
-import Folder from './assets/folder.svg';
-import Star from './assets/star.svg';
-import GitBranch from './assets/git-branch.svg';
+import MapPin from "./assets/map-pin.svg";
+import Github from "./assets/github.svg";
+import Linkedin from "./assets/linkedin.svg";
+import Mail from "./assets/mail.svg";
+import Folder from "./assets/folder.svg";
+import Star from "./assets/star.svg";
+import GitBranch from "./assets/git-branch.svg";
 
 function App() {
   const [repositories, setRepositories] = useState<IGithubRepo[]>([]);
@@ -22,6 +22,7 @@ function App() {
         return response.json();
       })
       .then((data) => {
+        console.log(data);
         setRepositories(data);
       });
   };
@@ -112,7 +113,7 @@ function App() {
             <a
               href="https://github.com/WeslleySORDev?tab=repositories"
               target="_blank"
-              className="text-sm font-light underline underline-offset-4"
+              className="text-sm font-light hover:underline underline-offset-4"
             >
               Veja todos
             </a>
@@ -129,11 +130,14 @@ function App() {
                     <Card key={repo.name}>
                       <div className="flex flex-col justify-between h-full gap-6 p-8">
                         <div className="flex items-center gap-4">
-                          <img
-                            src={Folder}
-                            alt="Icone de uma pasta"
-                          />
-                          <span>{repo.name}</span>
+                          <img src={Folder} alt="Icone de uma pasta" />
+                          <a
+                            href={repo.html_url}
+                            target="_blank"
+                            className="hover:underline underline-offset-4"
+                          >
+                            {repo.name}
+                          </a>
                         </div>
                         {repo.description ? (
                           <span className="text-xs font-light break-words line-clamp-3">
@@ -143,19 +147,13 @@ function App() {
                         <div className="flex justify-between items-center">
                           <div className="flex gap-4">
                             <div className="flex items-center gap-2">
-                              <img
-                                src={Star}
-                                alt="Icone de estrela"
-                              />
+                              <img src={Star} alt="Icone de estrela" />
                               <span className="text-xs font-light">
                                 {repo.stargazers_count}
                               </span>
                             </div>
                             <div className="flex items-center gap-2">
-                              <img
-                                src={GitBranch}
-                                alt="Icone de git branch"
-                              />
+                              <img src={GitBranch} alt="Icone de git branch" />
                               <span className="text-xs font-light">
                                 {repo.forks_count}
                               </span>

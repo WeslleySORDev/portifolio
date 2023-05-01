@@ -8,5 +8,11 @@ export const techs = [
     "sass",
     "redux",
     "git",
-    
+    "es6",
+    "axios",
+    "context api",
+    "react hooks",
+    "styled components",
+    "jest",
+    "tailwindcss"
 ]
