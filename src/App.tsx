@@ -136,7 +136,7 @@ function App() {
                           <span>{repo.name}</span>
                         </div>
                         {repo.description ? (
-                          <span className="text-xs font-light break-words truncate">
+                          <span className="text-xs font-light break-words line-clamp-3">
                             {repo.description}
                           </span>
                         ) : null}
