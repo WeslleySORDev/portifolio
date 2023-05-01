@@ -123,7 +123,8 @@ function App() {
             ? repositories.map((repo) => {
                 if (
                   repo.name !== "poke-images" &&
-                  repo.name !== "Weather-Web"
+                  repo.name !== "Weather-Web" &&
+                  repo.name !== "animeflix"
                 ) {
                   return (
                     <Card key={repo.name}>
