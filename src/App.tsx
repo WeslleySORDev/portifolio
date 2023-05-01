@@ -30,23 +30,24 @@ function App() {
   }, []);
 
   return (
-    <div className="flex p-10 gap-16 min-h-screen w-full">
-      <aside className="flex flex-col flex-1 gap-7">
+    <div className="flex min-h-screen w-full flex-col gap-16 p-4 lg:flex-row lg:p-10">
+      <aside className="flex flex-1 flex-col gap-7">
         <Card>
-          <div className="flex flex-col py-8 items-center">
+          <div className="flex flex-col items-center py-8">
             <img
-              className="w-32 h-32 rounded-full ring-offset-2 ring-2 ring-bg-techs ring-offset-bg-cards"
+              className="h-32 w-32 rounded-full ring-2 ring-bg-techs ring-offset-2 ring-offset-bg-cards"
               src="https://avatars.githubusercontent.com/weslleysordev"
               alt="Foto de perfil WeslleySorDev"
             />
-            <div className="flex flex-col items-center gap-2 mt-8">
+            <div className="mt-8 flex flex-col items-center gap-2">
               <h1 className="text-xl font-bold">Weslley S. O. Ruas</h1>
               <span className="text-xs font-light">Frontend Developer</span>
+              <span className="text-xs font-light text-text-techs">Engenharia de Software 2 / 8</span>
             </div>
           </div>
         </Card>
         <Card>
-          <div className="flex flex-col p-10 gap-5">
+          <div className="flex flex-col gap-5 p-10">
             <Link
               name="Brasil"
               image_path={MapPin}
@@ -72,7 +73,7 @@ function App() {
         <Card>
           <div className="flex flex-col gap-5 p-8">
             <h2 className="text-xl font-bold">Tecnologias</h2>
-            <div className="grid grid-cols-3 gap-4 justify-start">
+            <div className="grid grid-cols-1 justify-start gap-4 md:grid-cols-2 lg:grid-cols-3">
               {techs.map((tech) => {
                 return <Tech key={tech} name={tech} />;
               })}
@@ -82,13 +83,13 @@ function App() {
         <Card>
           <div className="flex flex-col gap-5 p-8">
             <h2 className="text-xl font-bold">Educação</h2>
-            <ul className="list-disc mx-10">
+            <ul className="mx-10 list-disc">
               <li>
                 <span className="text-xs font-normal">
                   Universidade Estácio de Sá
                 </span>
                 <br />
-                <span className="text-xs font-light">2022 - 2027</span>
+                <span className="text-xs font-light">2022 - 2026</span>
                 <br />
                 <span className="text-xs font-light">
                   Engenharia de Software
@@ -112,13 +113,13 @@ function App() {
             <a
               href="https://github.com/WeslleySORDev?tab=repositories"
               target="_blank"
-              className="text-sm font-light hover:underline underline-offset-4"
+              className="text-sm font-light underline-offset-4 hover:underline"
             >
               Veja todos
             </a>
           </div>
         </Card>
-        <div className="grid grid-cols-2 auto-rows-fr gap-8 w-full">
+        <div className="grid w-full auto-rows-fr grid-cols-1 gap-8 lg:grid-cols-2">
           {repositories.length > 0
             ? repositories.map((repo) => {
                 if (
@@ -128,23 +129,23 @@ function App() {
                 ) {
                   return (
                     <Card key={repo.name}>
-                      <div className="flex flex-col justify-between h-full gap-6 p-8">
+                      <div className="flex h-full flex-col justify-between gap-6 p-8">
                         <div className="flex items-center gap-4">
                           <img src={Folder} alt="Icone de uma pasta" />
                           <a
                             href={repo.html_url}
                             target="_blank"
-                            className="hover:underline underline-offset-4"
+                            className="underline-offset-4 hover:underline"
                           >
                             {repo.name}
                           </a>
                         </div>
                         {repo.description ? (
-                          <span className="text-xs font-light break-words line-clamp-3">
+                          <span className="line-clamp-3 break-words text-xs font-light">
                             {repo.description}
                           </span>
                         ) : null}
-                        <div className="flex justify-between items-center">
+                        <div className="flex items-center justify-between">
                           <div className="flex gap-4">
                             <div className="flex items-center gap-2">
                               <img src={Star} alt="Icone de estrela" />
