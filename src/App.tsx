@@ -125,7 +125,8 @@ function App() {
                 if (
                   repo.name !== "poke-images" &&
                   repo.name !== "Weather-Web" &&
-                  repo.name !== "animeflix"
+                  repo.name !== "animeflix" &&
+                  repo.name !== "portifolio"
                 ) {
                   return (
                     <Card key={repo.name}>
