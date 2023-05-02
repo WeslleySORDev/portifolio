@@ -124,8 +124,6 @@ function App() {
             ? repositories.map((repo) => {
                 if (
                   repo.name !== "poke-images" &&
-                  repo.name !== "Weather-Web" &&
-                  repo.name !== "animeflix" &&
                   repo.name !== "portifolio"
                 ) {
                   return (
