@@ -1466,6 +1466,11 @@
     "loose-envify" "^1.1.0"
     "scheduler" "^0.23.0"
 
+"react-modal-images@^0.1.0":
+  "integrity" "sha512-f8i58M+42oelmcynvDCVVPCOYxdCEgCMgeK8V14u0w6D1Qb/sPn96jF4tv6TNx5q3EvDrDcyf2Svy21Nbf4MfA=="
+  "resolved" "https://registry.npmjs.org/react-modal-images/-/react-modal-images-0.1.0.tgz"
+  "version" "0.1.0"
+
 "react-refresh@^0.14.0":
   "integrity" "sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ=="
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.14.0.tgz"

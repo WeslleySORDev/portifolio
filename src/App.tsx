@@ -10,6 +10,8 @@ import Mail from "./assets/mail.svg";
 import Folder from "./assets/folder.svg";
 import { projects } from "./variables/projects";
 
+import { RModalImages } from "react-modal-images";
+
 function App() {
   return (
     <div className="flex min-h-screen w-full flex-col gap-16 p-4 lg:flex-row lg:p-10">
@@ -128,7 +130,15 @@ function App() {
                       </span>
                     ) : null}
                     <div className="flex items-center justify-between">
-                      TODO
+                      <RModalImages
+                        small={project.image}
+                        medium={project.image}
+                        large={project.image}
+                        hideZoomButton
+                        hideDownloadButton
+                        hideRotateButton
+                        alt={`Imagem do projeto ${project.name}`}
+                      />
                     </div>
                   </div>
                 </Card>
