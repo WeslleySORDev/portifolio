@@ -57,7 +57,7 @@ function App() {
         <Card>
           <div className="flex flex-col gap-5 p-8">
             <h2 className="text-xl font-bold">Tecnologias</h2>
-            <div className="grid grid-cols-1 justify-start gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid grid-cols-1 justify-start gap-4 md:grid-cols-2 xl:grid-cols-3">
               {techs.map((tech) => {
                 return <Tech key={tech} name={tech} />;
               })}

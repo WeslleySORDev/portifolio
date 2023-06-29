@@ -32,4 +32,13 @@ export const projects: ProjectType[] = [
     image:
       "https://raw.githubusercontent.com/WeslleySORDev/portifolio/main/images/rocketflix.jpg",
   },
+  {
+    name: "pokedex",
+    description:
+      "Uma pokedex completa e focada em desempenho !",
+    url_repo: "https://github.com/WeslleySORDev/pokedex",
+    url_deploy: "https://pokedex-zeta-lime.vercel.app/",
+    image:
+      "https://raw.githubusercontent.com/WeslleySORDev/portifolio/main/images/pokedex.png",
+  },
 ];
