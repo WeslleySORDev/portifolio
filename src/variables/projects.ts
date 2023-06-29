@@ -21,7 +21,7 @@ export const projects: ProjectType[] = [
     url_repo: "https://github.com/WeslleySORDev/dtmoney-wsor",
     url_deploy: "https://wsordtmoney.netlify.app/",
     image:
-      "https://raw.githubusercontent.com/WeslleySORDev/portifolio/main/images/dtmoney-wsor.jpg",
+      "https://raw.githubusercontent.com/WeslleySORDev/portifolio/main/images/dtmoney.jpg",
   },
   {
     name: "rocketflix",

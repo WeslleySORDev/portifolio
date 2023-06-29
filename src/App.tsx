@@ -10,10 +10,7 @@ import Mail from "./assets/mail.svg";
 import Folder from "./assets/folder.svg";
 import { projects } from "./variables/projects";
 
-import { useWindowSize } from "./hooks/useWindowSize";
-
 function App() {
-  const { width } = useWindowSize();
   return (
     <div className="flex min-h-screen w-full flex-col gap-16 p-4 lg:flex-row lg:p-10">
       <aside className="flex flex-1 flex-col gap-7">
@@ -106,54 +103,49 @@ function App() {
             </a>
           </div>
         </Card>
-        <div className="grid w-full auto-rows-fr grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="grid w-full auto-rows-fr grid-cols-1 gap-8 xl:grid-cols-2">
           {projects.map((project) => {
-            if (
-              project.name !== "WeslleySORDev" &&
-              project.name !== "portifolio"
-            ) {
-              return (
-                <Card key={project.name}>
-                  <div className="flex h-full flex-col justify-between gap-6 p-8">
-                    <div className="flex items-center gap-4">
-                      <img src={Folder} alt="Icone de uma pasta" />
+            return (
+              <Card key={project.name}>
+                <div className="flex h-full flex-col justify-between gap-6 p-8">
+                  <div className="flex items-center gap-4">
+                    <img src={Folder} alt="Icone de uma pasta" />
+                    <a
+                      href={project.url_repo}
+                      target="_blank"
+                      className="underline-offset-4 hover:underline"
+                    >
+                      {project.name}
+                    </a>
+                    {project.url_deploy ? (
                       <a
-                        href={project.url_repo}
+                        href={project.url_deploy}
                         target="_blank"
-                        className="underline-offset-4 hover:underline"
+                        className="ml-auto underline underline-offset-4"
                       >
-                        {project.name}
-                      </a>
-                      {project.url_deploy ? (
-                        <a
-                          href={project.url_deploy}
-                          target="_blank"
-                          className="ml-auto underline underline-offset-4"
+                        <svg
+                          fill="#FFFFFF"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          width="24px"
+                          height="24px"
                         >
-                          <svg
-                            fill="#FFFFFF"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 24 24"
-                            width="24px"
-                            height="24px"
-                          >
-                            <path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z" />
-                          </svg>
-                        </a>
-                      ) : null}
-                    </div>
-                    {project.description ? (
-                      <span className="line-clamp-3 break-words text-xs font-light">
-                        {project.description}
-                      </span>
+                          <path d="M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 12 L 19 12 L 19 19 L 5 19 L 5 5 L 12 5 L 12 3 L 5 3 z M 14 3 L 14 5 L 17.585938 5 L 8.2929688 14.292969 L 9.7070312 15.707031 L 19 6.4140625 L 19 10 L 21 10 L 21 3 L 14 3 z" />
+                        </svg>
+                      </a>
                     ) : null}
-                    <div className="flex">
-                      <img src={project.image} alt="" />
-                    </div>
                   </div>
-                </Card>
-              );
-            }
+                  {project.description ? (
+                    <span className="line-clamp-3 break-words text-xs font-light">
+                      {project.description}
+                    </span>
+                  ) : null}
+                  <div className="flex">
+                    <img src={project.image} alt="" />
+                  </div>
+                </div>
+              </Card>
+            );
           })}
         </div>
       </main>
