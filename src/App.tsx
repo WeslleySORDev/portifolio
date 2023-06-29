@@ -10,7 +10,6 @@ import Mail from "./assets/mail.svg";
 import Folder from "./assets/folder.svg";
 import { projects } from "./variables/projects";
 
-import { RModalImages } from "react-modal-images";
 import { useWindowSize } from "./hooks/useWindowSize";
 
 function App() {
@@ -148,28 +147,8 @@ function App() {
                         {project.description}
                       </span>
                     ) : null}
-                    <div className="flex items-center justify-between">
-                      <RModalImages
-                        small={
-                          width && width >= 1024
-                            ? project.image[0]
-                            : project.image[1]
-                        }
-                        medium={
-                          width && width >= 1024
-                            ? project.image[0]
-                            : project.image[1]
-                        }
-                        large={
-                          width && width >= 1024
-                            ? project.image[0]
-                            : project.image[1]
-                        }
-                        hideZoomButton
-                        hideDownloadButton
-                        hideRotateButton
-                        alt={`Imagem do projeto ${project.name}`}
-                      />
+                    <div className="flex">
+                      <img src={project.image} alt="" />
                     </div>
                   </div>
                 </Card>
