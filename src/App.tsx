@@ -3,7 +3,7 @@ import { ModeToggle } from "./components/mode-toggle";
 function App() {
   return (
     <>
-      <header className="flex justify-end items-center px-4 py-2 gap-4">
+      <header className="flex items-center justify-end gap-4 px-4 py-2">
         <ul className="flex items-center gap-4">
           <li>
             <a href="#">Inicio</a>
