@@ -1,20 +1,39 @@
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
 import { ModeToggle } from "./components/mode-toggle";
 
 function App() {
   return (
     <>
       <header className="flex items-center justify-end gap-4 px-4 py-2">
-        <ul className="flex items-center gap-4">
-          <li>
-            <a href="#">Inicio</a>
-          </li>
-          <li>
-            <a href="#">Começo</a>
-          </li>
-          <li>
-            <a href="#">Fim</a>
-          </li>
-        </ul>
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <a href="#">
+                <NavigationMenuLink>Sobre mim</NavigationMenuLink>
+              </a>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <a href="#">
+                <NavigationMenuLink>Projetos</NavigationMenuLink>
+              </a>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <a href="#">
+                <NavigationMenuLink>Stacks</NavigationMenuLink>
+              </a>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <a href="#">
+                <NavigationMenuLink>Contato</NavigationMenuLink>
+              </a>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
         <ModeToggle />
       </header>
       <main></main>
