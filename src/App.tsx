@@ -4,6 +4,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import { Separator } from "@/components/ui/separator";
 import { ModeToggle } from "./components/mode-toggle";
 
 function App() {
@@ -17,16 +18,19 @@ function App() {
                 <NavigationMenuLink>Sobre mim</NavigationMenuLink>
               </a>
             </NavigationMenuItem>
+            <Separator orientation="vertical" />
             <NavigationMenuItem>
               <a href="#">
                 <NavigationMenuLink>Projetos</NavigationMenuLink>
               </a>
             </NavigationMenuItem>
+            <Separator orientation="vertical" />
             <NavigationMenuItem>
               <a href="#">
                 <NavigationMenuLink>Stacks</NavigationMenuLink>
               </a>
             </NavigationMenuItem>
+            <Separator orientation="vertical" />
             <NavigationMenuItem>
               <a href="#">
                 <NavigationMenuLink>Contato</NavigationMenuLink>
