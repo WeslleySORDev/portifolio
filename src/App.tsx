@@ -49,7 +49,7 @@ function App() {
         </NavigationMenu>
         <ModeToggle />
       </header>
-      <main className="flex flex-1 flex-col gap-52 border-b px-4 py-28">
+      <main className="flex max-w-[640px] flex-1 flex-col gap-32 place-self-center border-b px-4 py-14">
         <Card className="border-none">
           <CardHeader>
             <img
@@ -68,14 +68,19 @@ function App() {
             </p>
           </CardContent>
         </Card>
-        <Card className="max-w-96">
+        <Card>
           <CardHeader>
-            <h3 className="text-2xl font-semibold">Stacks</h3>
+            <h3 className="text-center text-2xl font-semibold">Stacks</h3>
           </CardHeader>
           <CardContent>
-            <Carousel>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
               <CarouselContent>
-                <CarouselItem className="basis-1/4">
+                <CarouselItem className="basis-1/5">
                   <svg className="h-8 w-8" viewBox="0 0 128 128">
                     <path
                       fill="#E44D26"
@@ -95,7 +100,7 @@ function App() {
                     ></path>
                   </svg>
                 </CarouselItem>
-                <CarouselItem className="basis-1/4">
+                <CarouselItem className="basis-1/5">
                   <svg className="h-8 w-8" viewBox="0 0 128 128">
                     <path
                       fill="#F0DB4F"
@@ -107,7 +112,7 @@ function App() {
                     ></path>
                   </svg>
                 </CarouselItem>
-                <CarouselItem className="basis-1/4">
+                <CarouselItem className="basis-1/5">
                   <svg className="h-8 w-8" viewBox="0 0 128 128">
                     <path
                       fill="#1572B6"
@@ -135,7 +140,7 @@ function App() {
                     ></path>
                   </svg>
                 </CarouselItem>
-                <CarouselItem className="basis-1/4">
+                <CarouselItem className="basis-1/5">
                   <svg className="h-8 w-8" viewBox="0 0 128 128">
                     <g fill="#61DAFB">
                       <circle cx="64" cy="64" r="11.4"></circle>
@@ -143,7 +148,7 @@ function App() {
                     </g>
                   </svg>
                 </CarouselItem>
-                <CarouselItem>
+                <CarouselItem className="basis-1/5">
                   <svg
                     className="h-8 w-8 fill-black dark:fill-white"
                     viewBox="0 0 128 128"
