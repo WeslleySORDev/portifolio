@@ -29,28 +29,37 @@ function App() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <a className="hover:brightness-75" href="#about-me">
-                <NavigationMenuLink>Sobre mim</NavigationMenuLink>
-              </a>
+              <NavigationMenuLink
+                className="hover:brightness-75"
+                href="#about-me"
+              >
+                Sobre mim
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <Separator orientation="vertical" />
             <NavigationMenuItem>
-              <a className="hover:brightness-75" href="#stacks">
-                <NavigationMenuLink>Stacks</NavigationMenuLink>
-              </a>
+              <NavigationMenuLink
+                className="hover:brightness-75"
+                href="#stacks"
+              >
+                Stacks
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <Separator orientation="vertical" />
             <NavigationMenuItem>
-              <a className="hover:brightness-75" href="#projects">
-                <NavigationMenuLink>Projetos</NavigationMenuLink>
-              </a>
+              <NavigationMenuLink
+                className="hover:brightness-75"
+                href="#projects"
+              >
+                Projetos
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
         <ModeToggle />
       </header>
-      <main className="flex max-w-[640px] flex-1 flex-col gap-32 place-self-center border-b px-4 py-14">
-        <Card className="border-none">
+      <main className="flex max-w-[640px] flex-1 flex-col gap-32 place-self-center scroll-smooth border-b px-4 py-14">
+        <Card id="about-me" className="scroll-m-[113px] border-none">
           <CardHeader>
             <img
               className="mx-auto aspect-square w-64 rounded-full object-cover"
@@ -68,7 +77,7 @@ function App() {
             </p>
           </CardContent>
         </Card>
-        <Card>
+        <Card id="stacks" className="border-none">
           <CardHeader>
             <h3 className="text-center text-2xl font-semibold">Stacks</h3>
           </CardHeader>
@@ -157,8 +166,54 @@ function App() {
                   </svg>
                 </CarouselItem>
               </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
+              <CarouselPrevious className="hidden sm:inline-flex" />
+              <CarouselNext className="hidden sm:inline-flex" />
+            </Carousel>
+          </CardContent>
+        </Card>
+        <Card id="projects" className="border-none">
+          <CardHeader>
+            <h3 className="text-center text-2xl font-semibold">Projetos</h3>
+          </CardHeader>
+          <CardContent>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
+              <CarouselContent>
+                <CarouselItem className="basis-full">
+                  <img
+                    className="aspect-square h-[512px] w-[512px] object-cover"
+                    src="/assets/projects/money-control.png"
+                    alt="Money control projeto"
+                  />
+                </CarouselItem>
+                <CarouselItem className="basis-full">
+                  <img
+                    className="aspect-square h-[512px] w-[512px] object-cover"
+                    src="/assets/projects/multistepform.png"
+                    alt="Multistepform projeto"
+                  />
+                </CarouselItem>
+                <CarouselItem className="basis-full">
+                  <img
+                    className="aspect-square h-[512px] w-[512px] object-cover"
+                    src="/assets/projects/my-pokedex.png"
+                    alt="My-pokedex projeto"
+                  />
+                </CarouselItem>
+                <CarouselItem className="basis-full">
+                  <img
+                    className="aspect-square h-[512px] w-[512px] object-cover"
+                    src="/assets/projects/rocketflix.png"
+                    alt="Rocketflix projeto"
+                  />
+                </CarouselItem>
+              </CarouselContent>
+              <CarouselPrevious className="hidden sm:inline-flex" />
+              <CarouselNext className="hidden sm:inline-flex" />
             </Carousel>
           </CardContent>
         </Card>
